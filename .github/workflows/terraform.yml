@@ -51,7 +51,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v4.1.0
       with:
         aws-region: eu-west-2
-        role-to-assume: arn:aws:iam::$ACCOUNT_ID:role/$ROLE_NAME
+        role-to-assume: arn:aws:iam::${{ secrets.ACCOUNT_ID }}:role/${{ secrets.ROLE_NAME }}
         role-session-name: aws-cli-session
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
