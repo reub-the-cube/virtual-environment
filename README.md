@@ -14,3 +14,9 @@ Use the standard actions to create the infrastructure
 
 And don't forget to destroy it!
 ```terraform destroy```
+
+## give GitHub the permission to assume roles
+
+Browse to the ./terraform/iam_oidc_provider module and run terraform
+- Create an IAM OpenID Connect provider
+
