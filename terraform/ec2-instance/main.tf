@@ -10,7 +10,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = "eu-west-2"
+  region = "eu-west-2"
 }
 
 resource "aws_instance" "app_server" {
@@ -18,7 +18,7 @@ resource "aws_instance" "app_server" {
   instance_type = "t3.micro"
 
   tags = {
-    Name = "ExampleAppServerInstance"
+    Name   = "ExampleAppServerInstance"
     Author = "Reuben"
   }
 }

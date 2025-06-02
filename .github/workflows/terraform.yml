@@ -48,12 +48,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v4.1.0
-      with:
-        aws-region: eu-west-2
-        role-to-assume: arn:aws:iam::${{ secrets.ACCOUNT_ID }}:role/${{ secrets.ROLE_NAME }}
-        role-session-name: aws-cli-session
+    #- name: Configure AWS Credentials
+    #  uses: aws-actions/configure-aws-credentials@v4.1.0
+    #  with:
+    #    aws-region: eu-west-2
+    #    role-to-assume: arn:aws:iam::${{ secrets.ACCOUNT_ID }}:role/${{ secrets.ROLE_NAME }}
+    #    role-session-name: aws-cli-session
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
