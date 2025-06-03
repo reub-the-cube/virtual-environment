@@ -17,6 +17,9 @@ And don't forget to destroy it!
 
 ## give GitHub the permission to assume roles
 
-Browse to the ./terraform/iam_oidc_provider module and run terraform
+Browse to the ./terraform/iam_oidc_provider module
+Create a .auto.tfvars file to specify variables used in the terraform
+Applying the terraform will:
 - Create an IAM OpenID Connect provider
-
+- Create a role that allows an OIDC relationship between a specific repository and AWS
+- Load a specified policy and apply it to the role
