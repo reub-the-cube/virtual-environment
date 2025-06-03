@@ -3,9 +3,9 @@ name: 'Terraform'
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - '!README.md'
-      - '!iam_oidc_provider/**'
+    paths-ignore:
+      - 'README.md'
+      - 'iam_oidc_provider/**'
   pull_request:
 
 permissions:
