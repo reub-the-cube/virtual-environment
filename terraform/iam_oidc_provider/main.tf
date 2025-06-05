@@ -13,11 +13,16 @@ provider "aws" {
   region = "eu-west-2"
 }
 
+# This can only exist once per account
 resource "aws_iam_openid_connect_provider" "github" {
   url = "https://token.actions.githubusercontent.com"
   client_id_list = [
     "sts.amazonaws.com"
   ]
+
+  tags = {
+    ProtectFromNuke = "true"
+  }
 }
 
 resource "aws_iam_role" "github_action_role" {
