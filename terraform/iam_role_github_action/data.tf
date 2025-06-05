@@ -1,3 +1,7 @@
+data "aws_iam_openid_connect_provider" "github" {
+  url = "https://token.actions.githubusercontent.com"
+}
+
 data "aws_iam_policy_document" "github_role_policy_document" {
   statement {
     actions = [
@@ -5,7 +9,7 @@ data "aws_iam_policy_document" "github_role_policy_document" {
     ]
     principals {
       type        = "Federated"
-      identifiers = ["arn:aws:iam::${var.account_id}:oidc-provider/token.actions.githubusercontent.com"]
+      identifiers = [data.aws_iam_openid_connect_provider.github.arn]
     }
     condition {
       test     = "StringEquals"
