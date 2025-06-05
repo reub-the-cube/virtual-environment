@@ -17,9 +17,16 @@ And don't forget to destroy it!
 
 ## give GitHub the permission to assume roles
 
-Browse to the ./terraform/iam_oidc_provider module
-Create a .auto.tfvars file to specify variables used in the terraform
+### ./iam_oidc_provider
+
+Create a long-lived OIDC provider for the GitHub action.
+Gives a tag to protect from aws-nuke.
+There is only a maximum of 1 identity provider for any given Provider URL, but multiple roles will be able to use it as a Principal.
+
+### ./iam_role_github_action
+Browse to the ./terraform/iam_role_github_action module.
+Create a .auto.tfvars file to specify variables used in the terraform.
 Applying the terraform will:
-- Create an IAM OpenID Connect provider
+- Lookup the IAM OpenID Connect provider for GitHub actions
 - Create a role that allows an OIDC relationship between a specific repository and AWS
 - Load a specified policy and apply it to the role
